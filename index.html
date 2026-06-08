@@ -134,14 +134,12 @@
     .hero-photo {
       position: absolute; right: 0; top: 0; bottom: 0; width: 46%;
       clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
-      background: linear-gradient(155deg, #222018 0%, #161511 55%, #1a1916 100%);
+      background-image: url('a1.jpg'); background-size: cover; background-position: center;
       display: flex; align-items: center; justify-content: center;
     }
     .hero-photo::before {
       content: ''; position: absolute; inset: 0;
-      background: repeating-linear-gradient(
-        -45deg, transparent, transparent 60px,
-        rgba(255,255,255,0.008) 60px, rgba(255,255,255,0.008) 61px);
+      background: linear-gradient(to right, rgba(17,17,14,0.55) 0%, rgba(17,17,14,0.1) 100%);
     }
     .photo-label {
       position: relative; z-index: 1; text-align: center;
@@ -331,6 +329,10 @@
     .footer-col a:hover { color: var(--limestone); }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
     .footer-bottom p { font-size: 0.75rem; color: var(--muted); }
+
+    .photo-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;background:var(--dark)}
+    .photo-strip img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:brightness(0.85) contrast(1.05)}
+    @media(max-width:700px){.photo-strip{grid-template-columns:repeat(2,1fr)}}
   </style>
 </head>
 <body>
@@ -356,9 +358,7 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <!-- PHOTOGRAPHY: full-bleed editorial — workshop interior, mason's hands on Welsh slate, strong directional light, no styling -->
-    <div class="hero-photo" aria-hidden="true">
-      <p class="photo-label">Photography<br>Workshop · Stone · Craft<br>Full-bleed, editorial</p>
-    </div>
+    <div class="hero-photo" aria-hidden="true"></div>
     <div class="container">
       <div class="hero-content">
         <span class="label">Stone Studio · Est. 1821 · Cardiff</span>

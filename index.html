@@ -3,701 +3,255 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stone Studio — Bespoke Stone, Since 1821</title>
-  <meta name="description" content="Stone Studio is a Welsh stonemasonry studio delivering bespoke stone solutions — from architectural sculpture and boulder signage to ceremonial plaques and memorials. Concept to installation, since 1821.">
-  <meta name="keywords" content="bespoke stone solutions, architectural stone specialists, stone design and manufacture, stone design manufacture installation, custom stone features, integrated stone project delivery, public realm stone specialists, stone signage and wayfinding, bespoke stone commissions, commercial stone installations, natural stone project specialists, specialist stone contractors">
+  <title>Stone Studio — From the first sketch to the final fixing</title>
+  <meta name="description" content="Stone Studio is a Welsh workshop working with architects, developers and private clients across the UK. Five specialist divisions. Concept through installation. Since 1821.">
+  <meta name="keywords" content="stone studio, bespoke stonework, welsh stonemason, architectural stone, stone signage, sculptural commissions, natural boulders, stone memorials">
   <link rel="canonical" href="https://thestonestudio.co/">
-  <meta property="og:title" content="Stone Studio — Architectural Stone, Since 1821">
-  <meta property="og:description" content="Six generations of Welsh stonemasonry. Bespoke stone commissions from concept to installation.">
-  <meta property="og:url" content="https://thestonestudio.co/">
-  <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Stone Studio — From the first sketch to the final fixing">
+  <meta property="og:description" content="Stone Studio is a Welsh workshop working with architects, developers and private clients across the UK. Five specialist divisions. Concept through installation. Since 1821.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* ============================================================
-       STONE STUDIO — MASTER DESIGN SYSTEM v1
-       Palette: Welsh slate · Portland limestone · Bronze
-       Type: Cormorant Garant (display) + Inter (body)
-       Device: vertical chisel │ as division separator
-              stacked STONE / STUDIO wordmark with differential tracking
-    ============================================================ */
-    :root {
-      --dark:      #11110E;
-      --dark-2:    #18181480;
-      --dark-s:    #181815;
-      --surface:   #1E1E1A;
-      --div:       #2C2B26;
-      --limestone: #EDE8DF;
-      --slate:     #A8A39A;
-      --bronze:    #9B7B42;
-      --bronze-lt: #B8924E;
-      --muted:     #5E5A53;
-      --white:     #F4F0E8;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--dark);
-      color: var(--slate);
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    h1,h2,h3,h4 {
-      font-family: 'Cormorant Garant', serif;
-      font-weight: 300;
-      color: var(--limestone);
-      line-height: 1.08;
-      letter-spacing: -0.01em;
-    }
-    h1 { font-size: clamp(3rem, 6.5vw, 6rem); }
-    h2 { font-size: clamp(2rem, 4vw, 3.6rem); }
-    h3 { font-size: clamp(1.3rem, 2.5vw, 2rem); }
-    h4 { font-size: 1.15rem; }
-    p { color: var(--slate); line-height: 1.75; }
-    a { color: inherit; text-decoration: none; }
-
-    .label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 400;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--bronze);
-      display: block;
-    }
-    .rule {
-      width: 40px; height: 1px;
-      background: var(--bronze);
-      display: block;
-      margin: 20px 0;
-    }
-
-    /* LAYOUT */
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
-    @media (max-width: 768px) { .container { padding: 0 24px; } }
-    section { padding: 120px 0; }
-    @media (max-width: 768px) { section { padding: 80px 0; } }
-
-    /* WORDMARK */
-    .wm { display: inline-flex; flex-direction: column; line-height: 1; }
-    .wm-s { font-family: 'Cormorant Garant', serif; font-weight: 300; letter-spacing: 0.38em; color: var(--limestone); text-transform: uppercase; }
-    .wm-t { font-family: 'Cormorant Garant', serif; font-weight: 300; letter-spacing: 0.7em; color: var(--bronze); text-transform: uppercase; }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 28px 48px;
-      display: flex; align-items: center; justify-content: space-between;
-      transition: background 0.4s, padding 0.4s, border-color 0.4s;
-      border-bottom: 1px solid transparent;
-    }
-    nav.scrolled {
-      background: rgba(17,17,14,0.96);
-      backdrop-filter: blur(16px);
-      padding: 18px 48px;
-      border-bottom-color: var(--div);
-    }
-    .wm-s, .wm-t { font-size: 1rem; }
-    .nav-links { display: flex; gap: 36px; list-style: none; }
-    .nav-links a {
-      font-size: 0.7rem; font-weight: 400; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--slate); transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--limestone); }
-    .nav-cta {
-      font-size: 0.7rem; font-weight: 400; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--limestone);
-      border: 1px solid var(--div); padding: 10px 22px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .nav-cta:hover { border-color: var(--bronze); color: var(--bronze); }
-    @media (max-width: 900px) { .nav-links { display: none; } nav { padding: 22px 24px; } nav.scrolled { padding: 16px 24px; } }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh; position: relative; overflow: hidden;
-      display: flex; align-items: flex-end; padding-bottom: 100px;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 90% 70% at 30% 60%, #1c1b16 0%, #11110e 100%);
-    }
-    .hero-bg::after {
-      content: ''; position: absolute; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      background-size: 256px; opacity: 0.03; pointer-events: none;
-    }
-    /* Right-side photo zone */
-    .hero-photo {
-      position: absolute; right: 0; top: 0; bottom: 0; width: 46%;
-      clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
-      background-image: url('a1.jpg'); background-size: cover; background-position: center;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .hero-photo::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(17,17,14,0.55) 0%, rgba(17,17,14,0.1) 100%);
-    }
-    .photo-label {
-      position: relative; z-index: 1; text-align: center;
-      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--muted); line-height: 2.2;
-    }
-    /* Hero content */
-    .hero-content { position: relative; z-index: 2; max-width: 640px; }
-    .hero h1 { line-height: 0.97; margin: 20px 0 28px; }
-    .hero h1 em { font-style: italic; color: var(--bronze); }
-    .hero-sub {
-      font-size: 1.05rem; line-height: 1.8; font-weight: 300;
-      color: var(--slate); max-width: 500px; margin-bottom: 44px;
-    }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-
-    /* BUTTONS */
-    .btn {
-      display: inline-block; font-size: 0.7rem; font-weight: 400;
-      letter-spacing: 0.2em; text-transform: uppercase; padding: 13px 32px;
-      transition: all 0.2s; cursor: pointer;
-    }
-    .btn-bronze { background: var(--bronze); color: var(--dark); }
-    .btn-bronze:hover { background: var(--bronze-lt); }
-    .btn-outline { border: 1px solid var(--div); color: var(--limestone); }
-    .btn-outline:hover { border-color: var(--limestone); }
-
-    /* TICKER */
-    .ticker {
-      background: var(--dark-s); overflow: hidden;
-      border-top: 1px solid var(--div); border-bottom: 1px solid var(--div);
-      padding: 13px 0;
-    }
-    .ticker-track {
-      display: flex; gap: 72px; white-space: nowrap;
-      animation: scroll-l 40s linear infinite;
-    }
-    .ticker-track:hover { animation-play-state: paused; }
-    .t-item { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-    .t-item b { color: var(--bronze); font-weight: 400; margin-right: 6px; }
-    @keyframes scroll-l { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-    /* TWO-COL INTRO */
-    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    @media (max-width: 900px) { .intro-grid { grid-template-columns: 1fr; gap: 48px; } }
-    .intro h2 em { font-style: italic; color: var(--bronze); }
-    .intro-body p { margin-bottom: 22px; font-size: 1rem; }
-    .stat-row {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--div); margin-top: 72px;
-    }
-    .stat { background: var(--dark); padding: 32px 24px; }
-    .stat-n { font-family: 'Cormorant Garant', serif; font-size: 3.2rem; font-weight: 300; color: var(--limestone); line-height: 1; margin-bottom: 6px; }
-    .stat-l { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
-
-    /* DIVISIONS */
-    .bg-dark-s { background: var(--dark-s); }
-    .section-header { margin-bottom: 60px; }
-    .division-grid {
-      display: grid; grid-template-columns: repeat(5, 1fr);
-      gap: 1px; background: var(--div);
-    }
-    @media (max-width: 1100px) { .division-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 650px) { .division-grid { grid-template-columns: 1fr 1fr; } }
-    .div-card {
-      background: var(--dark-s); padding: 36px 26px;
-      display: flex; flex-direction: column; gap: 14px;
-      position: relative; overflow: hidden; transition: background 0.3s;
-    }
-    .div-card:hover { background: var(--surface); }
-    .div-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: var(--bronze); transform: scaleX(0); transform-origin: left;
-      transition: transform 0.35s;
-    }
-    .div-card:hover::before { transform: scaleX(1); }
-    .div-n { font-size: 0.62rem; letter-spacing: 0.18em; color: var(--muted); }
-    .div-name {
-      font-family: 'Cormorant Garant', serif; font-size: 1.5rem;
-      font-weight: 300; color: var(--limestone); line-height: 1.2;
-    }
-    .div-desc { font-size: 0.86rem; line-height: 1.68; color: var(--muted); flex-grow: 1; }
-    .div-link {
-      font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--bronze); display: flex; align-items: center; gap: 6px;
-    }
-    .div-link::after { content: '→'; }
-
-    /* PILLARS */
-    .pillars-intro { max-width: 620px; margin-bottom: 72px; }
-    .pillars-intro h2 { font-style: italic; }
-    .pillars-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--div);
-    }
-    @media (max-width: 900px) { .pillars-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 580px) { .pillars-grid { grid-template-columns: 1fr; } }
-    .pillar { background: var(--dark); padding: 48px 32px; }
-    .pillar-num {
-      font-family: 'Cormorant Garant', serif; font-size: 2.8rem;
-      font-weight: 300; color: var(--div); line-height: 1; margin-bottom: 16px;
-    }
-    .pillar h3 { font-size: 1.35rem; font-weight: 300; margin-bottom: 8px; }
-    .pillar-sub {
-      font-family: 'Cormorant Garant', serif; font-size: 0.95rem;
-      font-style: italic; color: var(--bronze); margin-bottom: 14px;
-    }
-    .pillar p { font-size: 0.9rem; }
-
-    /* COMMISSIONS */
-    .commissions-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1px; background: var(--div); margin-top: 60px;
-    }
-    @media (max-width: 680px) { .commissions-grid { grid-template-columns: 1fr; } }
-    .com-item {
-      background: var(--dark-s); padding: 36px 32px;
-      display: grid; grid-template-columns: 8px 1fr; gap: 20px;
-    }
-    .com-dot { width: 8px; height: 8px; background: var(--bronze); margin-top: 9px; flex-shrink: 0; }
-    .com-tag { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bronze); margin-bottom: 7px; }
-    .com-item h4 { font-weight: 300; color: var(--limestone); margin-bottom: 6px; }
-    .com-item p { font-size: 0.88rem; color: var(--muted); }
-
-    /* CLIENTS */
-    .clients-flex {
-      display: flex; flex-wrap: wrap; gap: 1px; background: var(--div);
-      margin-top: 48px;
-    }
-    .client-tag {
-      background: var(--dark); padding: 16px 24px;
-      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--muted); transition: color 0.2s;
-    }
-    .client-tag:hover { color: var(--limestone); }
-
-    /* CTA SECTION */
-    .cta-section { text-align: center; padding: 160px 0; }
-    .cta-section h2 {
-      font-size: clamp(2.4rem, 5vw, 5rem); font-weight: 300; font-style: italic;
-      max-width: 800px; margin: 0 auto 36px;
-    }
-    .cta-section .sub { max-width: 540px; margin: 0 auto 44px; font-size: 1rem; }
-    .contact-row {
-      display: flex; gap: 56px; justify-content: center;
-      margin-top: 64px; flex-wrap: wrap;
-    }
-    .contact-col { text-align: center; }
-    .contact-col .label { margin-bottom: 8px; }
-    .contact-col a {
-      font-family: 'Cormorant Garant', serif; font-size: 1.4rem;
-      font-weight: 300; color: var(--limestone); transition: color 0.2s;
-    }
-    .contact-col a:hover { color: var(--bronze); }
-
-    /* CROSS-DIV BAR */
-    .xdiv-bar {
-      background: var(--surface); border-top: 1px solid var(--div);
-      padding: 28px 0;
-    }
-    .xdiv-inner { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-    .xdiv-label { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-right: 12px; }
-    .xdiv-link {
-      font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
-      padding: 7px 14px; border: 1px solid var(--div); color: var(--slate);
-      transition: all 0.2s;
-    }
-    .xdiv-link:hover { border-color: var(--bronze); color: var(--bronze); }
-
-    /* FOOTER */
-    footer { background: var(--dark-s); border-top: 1px solid var(--div); padding: 60px 0 36px; }
-    .footer-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-      padding-bottom: 48px; border-bottom: 1px solid var(--div); margin-bottom: 28px;
-    }
-    @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
-    @media (max-width: 580px) { .footer-grid { grid-template-columns: 1fr; } }
-    .footer-brand p { font-size: 0.88rem; line-height: 1.75; max-width: 280px; margin-top: 14px; }
-    .footer-col h5 {
-      font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 400;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
-      margin-bottom: 18px;
-    }
-    .footer-col ul { list-style: none; }
-    .footer-col li { margin-bottom: 10px; }
-    .footer-col a { font-size: 0.88rem; color: var(--slate); transition: color 0.2s; }
-    .footer-col a:hover { color: var(--limestone); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .footer-bottom p { font-size: 0.75rem; color: var(--muted); }
-
-    .photo-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;background:var(--dark)}
-    .photo-strip img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:brightness(0.85) contrast(1.05)}
-    @media(max-width:700px){.photo-strip{grid-template-columns:repeat(2,1fr)}}
-  </style>
+    :root{--bg:#F6F3EE;--bg-s:#EAE7E1;--fg:#191713;--mid:#7D7267;--rule:#D4CFCA;--stone:#8C7C6A}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--fg);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    h1{font-size:clamp(2.6rem,5.5vw,5rem);font-weight:300;line-height:1.06;letter-spacing:-0.03em;color:var(--fg)}
+    h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.08;letter-spacing:-0.025em;color:var(--fg)}
+    h3{font-size:0.95rem;font-weight:500;color:var(--fg);letter-spacing:0.01em}
+    p{color:var(--mid);line-height:1.8;font-size:0.94rem}
+    a{color:inherit;text-decoration:none}
+    .label{font-size:0.6rem;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:14px}
+    .c{max-width:1280px;margin:0 auto;padding:0 64px}
+    @media(max-width:768px){.c{padding:0 24px}}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 64px;display:flex;align-items:center;justify-content:space-between;background:rgba(246,243,238,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule)}
+    @media(max-width:768px){nav{padding:14px 24px}}
+    .nav-logo{display:block;line-height:0}
+    .nav-logo svg{height:26px;width:auto}
+    .nav-links{display:flex;gap:32px;list-style:none}
+    @media(max-width:960px){.nav-links{display:none}}
+    .nav-links a{font-size:0.62rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);transition:color 0.2s}
+    .nav-links a:hover{color:var(--fg)}
+    .nav-cta{font-size:0.62rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--fg);border-bottom:1px solid var(--fg);padding-bottom:2px;transition:opacity 0.2s}
+    .nav-cta:hover{opacity:0.55}
+    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:63px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}}
+    .hero-text{display:flex;flex-direction:column;justify-content:center;padding:88px 80px 88px 64px}
+    @media(max-width:900px){.hero-text{padding:56px 24px 48px}}
+    .hero-text h1{margin:14px 0 20px}
+    .hero-text p{font-size:1rem;max-width:340px;color:var(--mid)}
+    .hero-photo{background-size:cover;background-position:center;min-height:520px}
+    @media(max-width:900px){.hero-photo{min-height:58vw;order:-1}}
+    .photo-strip{display:grid;gap:3px;background:var(--bg-s)}
+    .photo-strip img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:brightness(0.97)}
+    section{padding:104px 0}
+    @media(max-width:768px){section{padding:72px 0}}
+    .bt{border-top:1px solid var(--rule)}
+    .bg-s{background:var(--bg-s)}
+    .two-col{display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:start}
+    @media(max-width:900px){.two-col{grid-template-columns:1fr;gap:36px}}
+    .two-col p{margin-bottom:18px}
+    .two-col p:last-child{margin-bottom:0}
+    .stats{display:flex;gap:48px;margin-top:40px;padding-top:32px;border-top:1px solid var(--rule)}
+    @media(max-width:600px){.stats{gap:28px}}
+    .stat-n{font-size:2rem;font-weight:300;color:var(--fg);letter-spacing:-0.03em;line-height:1;display:block}
+    .stat-l{font-size:0.58rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);display:block;margin-top:4px}
+    .div-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);margin-top:52px}
+    @media(max-width:1100px){.div-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:580px){.div-grid{grid-template-columns:1fr}}
+    .div-card{background:var(--bg);padding:40px 28px 36px;display:block;transition:background 0.25s}
+    .div-card:hover{background:var(--bg-s)}
+    .div-card .label{margin-bottom:10px}
+    .div-title{font-size:0.9rem;font-weight:500;color:var(--fg);margin-bottom:10px}
+    .div-desc{font-size:0.8rem;color:var(--mid);line-height:1.7;margin-bottom:22px}
+    .div-link{font-size:0.58rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)}
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:56px}
+    @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:580px){.svc-grid{grid-template-columns:1fr}}
+    .svc{background:var(--bg-s);padding:36px 28px}
+    .svc h3{margin-bottom:8px}
+    .svc p{font-size:0.82rem;line-height:1.72}
+    .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:56px}
+    @media(max-width:900px){.pillar-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:580px){.pillar-grid{grid-template-columns:1fr}}
+    .pillar{background:var(--bg-s);padding:40px 28px}
+    .pillar-n{font-size:0.58rem;font-weight:500;letter-spacing:0.22em;color:var(--stone);margin-bottom:16px;display:block}
+    .pillar h3{font-size:0.95rem;font-weight:500;margin-bottom:8px}
+    .pillar p{font-size:0.82rem;line-height:1.72}
+    .cta-s{text-align:center}
+    .cta-s h2{max-width:580px;margin:14px auto 14px}
+    .cta-s p{max-width:420px;margin:0 auto 36px;font-size:0.95rem}
+    .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;font-size:0.6rem;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;padding:13px 36px;border:1px solid var(--fg);color:var(--fg);transition:all 0.2s}
+    .btn:hover{background:var(--fg);color:var(--bg)}
+    .btn-ghost{border-color:var(--rule);color:var(--mid)}
+    .btn-ghost:hover{border-color:var(--fg);color:var(--fg);background:transparent}
+    footer{padding:32px 0;border-top:1px solid var(--rule)}
+    .foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .foot-note{font-size:0.65rem;color:var(--stone);letter-spacing:0.06em}
+    .foot-links{display:flex;gap:24px}
+    .foot-links a{font-size:0.62rem;color:var(--stone);letter-spacing:0.14em;text-transform:uppercase;transition:color 0.2s}
+    .foot-links a:hover{color:var(--fg)}
+</style>
 </head>
 <body>
-
-  <!-- NAV -->
   <nav id="nav">
-    <a href="/" aria-label="Stone Studio">
-      <div class="wm">
-        <span class="wm-s" style="font-size:1rem;">Stone</span>
-        <span class="wm-t" style="font-size:1rem;">Studio</span>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#pillars">Studio</a></li>
-      <li><a href="#divisions">Divisions</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Discuss a project</a>
+    <a href="/" class="nav-logo"><svg>
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #231f20;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <path class="cls-1" d="M305.56,36.44c-.81-.39-1.81-.76-2.99-1.1-1.18-.34-2.36-.51-3.54-.51-1.84,0-3.31.46-4.41,1.38-1.1.92-1.65,2.07-1.65,3.46,0,1.05.32,1.92.95,2.62.63.7,1.46,1.29,2.48,1.77,1.02.49,2.11.95,3.27,1.4.92.34,1.83.72,2.74,1.14s1.73.93,2.46,1.54,1.32,1.35,1.75,2.24c.43.89.65,2,.65,3.31,0,1.55-.37,2.92-1.1,4.11-.73,1.19-1.76,2.12-3.07,2.78s-2.83.98-4.57.98c-1.39,0-2.66-.17-3.8-.51-1.14-.34-2.14-.74-2.99-1.2-.85-.46-1.53-.85-2.03-1.16l.91-1.57c.58.42,1.28.84,2.11,1.26.83.42,1.73.77,2.7,1.06.97.29,1.94.43,2.91.43,1.13,0,2.22-.22,3.29-.67s1.94-1.12,2.64-2.03,1.04-2.05,1.04-3.44-.33-2.42-.98-3.25c-.66-.83-1.5-1.5-2.52-2.03-1.02-.52-2.11-1-3.27-1.42-.89-.34-1.79-.7-2.68-1.08-.89-.38-1.71-.84-2.44-1.38-.74-.54-1.32-1.19-1.75-1.95-.43-.76-.65-1.68-.65-2.76,0-1.34.34-2.5,1.02-3.5.68-1,1.61-1.78,2.78-2.34,1.17-.56,2.5-.86,4-.89,1.31,0,2.64.17,4,.51s2.53.77,3.52,1.3l-.75,1.5Z"/>
+        <path class="cls-1" d="M316.74,33.29h18.3v1.85h-8.23v26.1h-1.93v-26.1h-8.15v-1.85Z"/>
+        <path class="cls-1" d="M347.99,51.79c0,1.63.33,3.03,1,4.21.67,1.18,1.58,2.09,2.74,2.74,1.15.64,2.47.96,3.94.96s2.83-.32,4-.96c1.17-.64,2.09-1.56,2.76-2.74s1-2.58,1-4.21v-18.5h1.89v18.62c0,2.02-.43,3.75-1.28,5.2-.85,1.44-2.01,2.54-3.46,3.31-1.46.76-3.09,1.14-4.9,1.14s-3.44-.38-4.9-1.14c-1.46-.76-2.6-1.86-3.44-3.31s-1.26-3.17-1.26-5.2v-18.62h1.93v18.5Z"/>
+        <path class="cls-1" d="M378.58,61.24v-27.95h6.89c2.7,0,5.01.43,6.91,1.28,1.9.85,3.44,1.97,4.62,3.37,1.18,1.39,2.05,2.91,2.6,4.57.55,1.65.83,3.29.83,4.92,0,2.13-.37,4.04-1.1,5.73s-1.74,3.14-3.01,4.35c-1.27,1.21-2.72,2.13-4.35,2.77-1.63.64-3.35.96-5.16.96h-8.23ZM380.51,59.39h5.79c1.68,0,3.25-.28,4.72-.83,1.47-.55,2.76-1.35,3.88-2.4,1.12-1.05,1.99-2.32,2.62-3.8s.95-3.17.95-5.06c0-1.6-.27-3.13-.81-4.58-.54-1.46-1.34-2.75-2.42-3.88-1.08-1.13-2.4-2.02-3.98-2.68-1.58-.66-3.41-.98-5.51-.98h-5.24v24.21Z"/>
+        <path class="cls-1" d="M412.07,33.29h1.93v27.95h-1.93v-27.95Z"/>
+        <path class="cls-1" d="M425.65,47.3c0-1.97.37-3.81,1.1-5.53.73-1.72,1.76-3.24,3.07-4.57s2.83-2.36,4.55-3.11c1.72-.75,3.56-1.12,5.53-1.12s3.82.37,5.55,1.12c1.73.75,3.25,1.79,4.57,3.11,1.31,1.33,2.34,2.85,3.09,4.57.75,1.72,1.12,3.56,1.12,5.53s-.37,3.81-1.12,5.53c-.75,1.72-1.78,3.24-3.09,4.55s-2.83,2.34-4.57,3.07c-1.73.73-3.58,1.1-5.55,1.1s-3.81-.35-5.53-1.06c-1.72-.71-3.23-1.71-4.55-2.99-1.31-1.29-2.34-2.79-3.07-4.53-.73-1.73-1.1-3.62-1.1-5.67ZM427.62,47.34c0,1.71.32,3.31.95,4.8.63,1.5,1.51,2.81,2.64,3.94,1.13,1.13,2.43,2.01,3.92,2.66,1.48.64,3.06.96,4.74.96s3.35-.32,4.84-.96c1.5-.64,2.81-1.53,3.94-2.66,1.13-1.13,2.01-2.44,2.66-3.94.64-1.5.96-3.11.96-4.84s-.32-3.31-.96-4.82c-.64-1.51-1.53-2.83-2.66-3.98-1.13-1.14-2.44-2.04-3.94-2.7-1.5-.66-3.1-.98-4.8-.98s-3.35.33-4.84,1c-1.5.67-2.8,1.58-3.92,2.74-1.12,1.16-1.98,2.49-2.6,4-.62,1.51-.92,3.1-.92,4.78Z"/>
+      </g>
+      <g>
+        <path class="cls-1" d="M142.15,40c-1.1-.6-2.22-1.1-3.37-1.5-1.14-.39-2.21-.59-3.21-.59-1.23,0-2.21.25-2.91.75-.71.5-1.06,1.25-1.06,2.24,0,.68.27,1.29.81,1.83.54.54,1.23,1.02,2.09,1.44.85.42,1.74.8,2.66,1.14.84.32,1.67.69,2.5,1.12.83.43,1.57.97,2.22,1.61.66.64,1.18,1.44,1.57,2.4.39.96.59,2.13.59,3.52,0,1.47-.38,2.83-1.14,4.09-.76,1.26-1.88,2.28-3.35,3.05-1.47.77-3.28,1.16-5.43,1.16-1.1,0-2.22-.11-3.37-.33s-2.26-.56-3.37-1.02c-1.1-.46-2.17-1.04-3.19-1.75l2.52-4.45c.68.5,1.42.94,2.22,1.32.8.38,1.61.68,2.42.89.81.21,1.56.31,2.24.31s1.37-.1,2.07-.29c.7-.2,1.27-.53,1.73-1,.46-.47.69-1.13.69-1.97,0-.58-.19-1.1-.57-1.58-.38-.47-.89-.91-1.54-1.3-.64-.39-1.35-.73-2.11-1.02-.89-.34-1.81-.73-2.75-1.18-.95-.45-1.83-.99-2.66-1.63-.83-.64-1.5-1.44-2.01-2.4s-.77-2.13-.77-3.52c0-1.68.37-3.14,1.12-4.37s1.8-2.21,3.17-2.93c1.36-.72,2.94-1.12,4.72-1.2,2.33,0,4.23.28,5.69.83,1.46.55,2.76,1.21,3.92,1.97l-2.17,4.37Z"/>
+        <path class="cls-1" d="M152.19,32.99h19.52v5.51h-7.05v23.46h-5.71v-23.46h-6.77v-5.51Z"/>
+        <path class="cls-1" d="M179.98,47.51c0-1.99.38-3.88,1.14-5.67.76-1.78,1.82-3.37,3.17-4.74s2.92-2.46,4.7-3.25c1.78-.79,3.7-1.18,5.75-1.18s3.92.39,5.71,1.18c1.78.79,3.37,1.87,4.74,3.25s2.45,2.96,3.23,4.74c.77,1.79,1.16,3.67,1.16,5.67s-.39,3.96-1.16,5.75c-.77,1.79-1.85,3.35-3.23,4.7s-2.96,2.41-4.74,3.17c-1.79.76-3.69,1.14-5.71,1.14s-3.96-.38-5.75-1.14c-1.79-.76-3.35-1.82-4.7-3.17s-2.41-2.92-3.17-4.7c-.76-1.78-1.14-3.7-1.14-5.75ZM185.88,47.51c0,1.29.23,2.49.69,3.6.46,1.12,1.1,2.1,1.93,2.95.83.85,1.78,1.52,2.87,1.99s2.28.71,3.56.71,2.38-.24,3.44-.71,1.99-1.13,2.77-1.99c.79-.85,1.4-1.84,1.85-2.95.45-1.11.67-2.32.67-3.6s-.23-2.53-.69-3.66c-.46-1.13-1.09-2.12-1.89-2.97-.8-.85-1.74-1.52-2.81-1.99s-2.24-.71-3.5-.71-2.43.24-3.5.71-2.02,1.14-2.83,1.99-1.44,1.84-1.89,2.97c-.45,1.13-.67,2.35-.67,3.66Z"/>
+        <path class="cls-1" d="M245.75,63.14l-21.96-19.84,1.69.94.12,17.71h-5.79v-30.11h.24l21.49,19.76-1.26-.55-.12-18.07h5.75v30.15h-.16Z"/>
+        <path class="cls-1" d="M257.91,32.99h19.76v5.51h-14.05v6.18h12.44v5.51h-12.44v6.26h14.6v5.51h-20.31v-28.97Z"/>
+      </g>
+    </g>
+    <g>
+      <g>
+        <rect class="cls-1" x="36.15" width="63.48" height="27.78"/>
+        <rect class="cls-1" x="36.16" y="36.12" width="63.47" height="27.78"/>
+        <rect class="cls-1" y="72.23" width="99.63" height="27.78"/>
+      </g>
+      <rect class="cls-1" x="-18.09" y="18.09" width="63.97" height="27.78" transform="translate(-18.09 45.88) rotate(-90)"/>
+    </g>
+  </g>
+</svg></a>
+    <ul class="nav-links"><li><a href="#divisions">Divisions</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li></ul>
+    <div style="display:flex;gap:16px;align-items:center"><a href="mailto:hello@stonesign.co.uk" class="nav-cta">Enquire</a></div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg"></div>
-    <!-- PHOTOGRAPHY: full-bleed editorial — workshop interior, mason's hands on Welsh slate, strong directional light, no styling -->
-    <div class="hero-photo" aria-hidden="true"></div>
-    <div class="container">
-      <div class="hero-content">
-        <span class="label">Stone Studio · Est. 1821 · Cardiff</span>
-        <div class="rule"></div>
-        <h1>From the first<br>sketch to the<br><em>final fixing.</em></h1>
-        <p class="hero-sub">Some clients come with a vision and no design. Some come with a fully-locked drawing and just need the work made. Most come with something in between.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-bronze">Discuss a project</a>
-          <a href="#divisions" class="btn btn-outline">Our divisions</a>
-        </div>
-      </div>
+    <div class="hero-text">
+      <span class="label">A Welsh workshop · Est. 1821</span>
+      <h1>From the first sketch
+to the final fixing.</h1>
+      <p>Or any stage in between.</p>
     </div>
+    <div class="hero-photo" style="background-image:url('a1.jpg')"></div>
   </section>
 
-  <!-- TICKER -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span class="t-item"><b>·</b>King Charles III · Welsh Slate Unveiling</span>
-      <span class="t-item"><b>·</b>Arsenal F.C. · Engraved Boulder</span>
-      <span class="t-item"><b>·</b>St Peter's College Oxford · Portland Limestone Crest</span>
-      <span class="t-item"><b>·</b>Sony Europe · 50-Year Anniversary Ceremony</span>
-      <span class="t-item"><b>·</b>Welsh Government · State Commission</span>
-      <span class="t-item"><b>·</b>National Trust · Heritage Signage</span>
-      <span class="t-item"><b>·</b>BBC · Corporate Commemoration</span>
-      <span class="t-item"><b>·</b>RSPB · Public Realm Wayfinding</span>
-      <span class="t-item"><b>·</b>King Charles III · Welsh Slate Unveiling</span>
-      <span class="t-item"><b>·</b>Arsenal F.C. · Engraved Boulder</span>
-      <span class="t-item"><b>·</b>St Peter's College Oxford · Portland Limestone Crest</span>
-      <span class="t-item"><b>·</b>Sony Europe · 50-Year Anniversary Ceremony</span>
-      <span class="t-item"><b>·</b>Welsh Government · State Commission</span>
-      <span class="t-item"><b>·</b>National Trust · Heritage Signage</span>
-      <span class="t-item"><b>·</b>BBC · Corporate Commemoration</span>
-      <span class="t-item"><b>·</b>RSPB · Public Realm Wayfinding</span>
-    </div>
+  <div class="photo-strip" aria-hidden="true" style="grid-template-columns:repeat(6,1fr)">
+    <img src="1.jpg" alt="" loading="lazy">
+    <img src="2.jpg" alt="" loading="lazy">
+    <img src="7.jpg" alt="" loading="lazy">
+    <img src="8.jpg" alt="" loading="lazy">
+    <img src="10.jpg" alt="" loading="lazy">
+    <img src="11.jpg" alt="" loading="lazy">
   </div>
 
-  <!-- INTRO -->
-  <section class="intro">
-    <div class="container">
-      <div class="intro-grid">
+  <section class="bt">
+    <div class="c">
+      <div class="two-col">
         <div>
-          <span class="label">The studio</span>
-          <div class="rule"></div>
-          <h2>Six generations<br>of Welsh<br><em>stonemasonry.</em></h2>
+          <span class="label">Stone Studio</span>
+          <h2>Stone, made to your stage.</h2>
         </div>
-        <div class="intro-body">
-          <p>Stone Sign Co. has been quietly making the plaques, signs and stone features that mark Britain's most important moments since 1821. Stone Studio is where that craft meets its next chapter.</p>
-          <p>We work with architects, designers, developers, institutions and governments — picking up each project at whatever stage you need, and handing it back wherever you want.</p>
-          <p>Welsh-rooted. Internationally delivered. One workshop, one team, one heritage: five specialist divisions.</p>
-          <a href="#divisions" class="btn btn-outline" style="margin-top:12px;">Explore the divisions</a>
-        </div>
-      </div>
-      <div class="stat-row">
-        <div class="stat">
-          <div class="stat-n">1821</div>
-          <div class="stat-l">Founded, Cardiff</div>
-        </div>
-        <div class="stat">
-          <div class="stat-n">6</div>
-          <div class="stat-l">Generations of craft</div>
-        </div>
-        <div class="stat">
-          <div class="stat-n">5</div>
-          <div class="stat-l">Specialist divisions</div>
+        <div>
+          <p>Some clients come with a vision and no design. Some come with a fully-locked drawing and just need the work made. Most come with something in between.</p>
+          <p>We pick up the project at whatever stage you need — and hand it back wherever you want. Five specialist divisions. One workshop. Cardiff.</p>
+          <p>We work with architects, developers, landscape designers, funeral directors, natural burial grounds and private clients across the UK and internationally.</p>
+          <div class="stats">
+            <div><span class="stat-n">1821</span><span class="stat-l">Founded</span></div>
+            <div><span class="stat-n">5</span><span class="stat-l">Divisions</span></div>
+            <div><span class="stat-n">UK+</span><span class="stat-l">International</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DIVISIONS -->
-  <section class="bg-dark-s" id="divisions">
-    <div class="container">
-      <div class="section-header">
-        <span class="label">Five divisions</span>
-        <div class="rule"></div>
-        <h2>One studio.<br>Five ways in.</h2>
-      </div>
-      <div class="division-grid">
-        <a href="https://signs.thestonestudio.co" class="div-card">
-          <span class="div-n">01</span>
-          <div class="div-name">Stone Studio<br>│ Signs</div>
-          <p class="div-desc">Business name plaques, façade signage, wayfinding suites. For hospitality groups, corporate facilities and design studios.</p>
-          <span class="div-link">View division</span>
+  <section class="bt" id="divisions">
+    <div class="c">
+      <span class="label">Five divisions</span>
+      <h2>One studio</h2>
+      <div class="div-grid">
+        <a href="https://stone-studio-signs.vercel.app" class="div-card">
+          <span class="label">Signs</span>
+          <p class="div-title">Stone Studio Signs</p>
+          <p class="div-desc">Carved, sandblasted and cast stone signage for residential, commercial and civic projects.</p>
+          <span class="div-link">Visit &rarr;</span>
         </a>
-        <a href="https://boulders.thestonestudio.co" class="div-card">
-          <span class="div-n">02</span>
-          <div class="div-name">Stone Studio<br>│ Boulders</div>
-          <p class="div-desc">Boulder and monolith signage. Entrance features for developments and estates. Public art and trails.</p>
-          <span class="div-link">View division</span>
+        <a href="https://stone-studio-boulders.vercel.app" class="div-card">
+          <span class="label">Boulders</span>
+          <p class="div-title">Stone Studio Boulders</p>
+          <p class="div-desc">Hand-selected natural boulders and landscape stone, placed for architects and garden designers.</p>
+          <span class="div-link">Visit &rarr;</span>
         </a>
-        <a href="https://ceremonial.thestonestudio.co" class="div-card">
-          <span class="div-n">03</span>
-          <div class="div-name">Stone Studio<br>│ Ceremonial</div>
-          <p class="div-desc">Commemorative plaques, foundation stones, Royal and state unveilings. Easel hire and full ceremony staging.</p>
-          <span class="div-link">View division</span>
+        <a href="https://stone-studio-ceremonial.vercel.app" class="div-card">
+          <span class="label">Ceremonial</span>
+          <p class="div-title">Stone Studio Ceremonial</p>
+          <p class="div-desc">Foundation stones, commemorative plaques and civic stone for ceremonies and unveilings.</p>
+          <span class="div-link">Visit &rarr;</span>
         </a>
-        <a href="https://architectural.thestonestudio.co" class="div-card">
-          <span class="div-n">04</span>
-          <div class="div-name">Stone Studio<br>│ Architectural</div>
-          <p class="div-desc">Art projects. Sculptural commissions. Design, sourcing, manufacturing and installation as a single integrated service.</p>
-          <span class="div-link">View division</span>
+        <a href="https://stone-studio-architectural.vercel.app" class="div-card">
+          <span class="label">Architectural</span>
+          <p class="div-title">Stone Studio Architectural</p>
+          <p class="div-desc">Sculptural commissions, public art and architectural stone features from concept to install.</p>
+          <span class="div-link">Visit &rarr;</span>
         </a>
-        <a href="https://memorials.thestonestudio.co" class="div-card">
-          <span class="div-n">05</span>
-          <div class="div-name">Stone Studio<br>│ Memorials</div>
-          <p class="div-desc">Trade memorial supply for natural burial grounds and crematoria. Bespoke headstones. Pet memorials.</p>
-          <span class="div-link">View division</span>
+        <a href="https://stone-studio-memorials.vercel.app" class="div-card">
+          <span class="label">Memorials</span>
+          <p class="div-title">Stone Studio Memorials</p>
+          <p class="div-desc">Headstones, memorial plaques and natural burial markers for private clients and the funeral trade.</p>
+          <span class="div-link">Visit &rarr;</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- SERVICE PILLARS -->
-  <section id="pillars">
-    <div class="container">
-      <div class="pillars-intro">
-        <span class="label">How we work</span>
-        <div class="rule"></div>
-        <h2><em>From concept to install —<br>or any stage in between.</em></h2>
-      </div>
-      <div class="pillars-grid">
-        <div class="pillar">
-          <div class="pillar-num">01</div>
-          <h3>Concept</h3>
-          <p class="pillar-sub">Starting from a sketch, a brief, or just an occasion.</p>
-          <p>From a napkin sketch to the seed of a sculptural idea. We work alongside clients, architects and designers to shape what a finished piece could be — character, scale, material, intent. Bring us nothing more than the moment you want to mark.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-num">02</div>
-          <h3>Design</h3>
-          <p class="pillar-sub">Working drawings, material samples, ready to sign off.</p>
-          <p>We turn a concept into a buildable design — drawings, samples, proofs, costed and finalised. Or we work straight to your designer's specification if the design is already locked.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-num">03</div>
-          <h3>Foundations</h3>
-          <p class="pillar-sub">For pieces that need to stand for centuries.</p>
-          <p>For monoliths, large boulders and architectural-scale work, we co-ordinate foundation design, ground works and structural engineering — briefing your engineer, or bringing in ours.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-num">04</div>
-          <h3>Material Sourcing</h3>
-          <p class="pillar-sub">Direct from quarry. Welsh slate, Portland limestone and beyond.</p>
-          <p>Hand-picked at quarry. Colour-matched for conservation jobs. Imported to specification for specialty stones. Provenance documented for every piece.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-num">05</div>
-          <h3>Craft & Production</h3>
-          <p class="pillar-sub">Six generations of Welsh stonemasonry, under one roof.</p>
-          <p>Hand-cut, photo-blasted, gilded, polished, honed, riven — every finish, every technique, in our Cardiff workshop. The work that left here in 1821 was finished by hand. So is the work that leaves today.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-num">06</div>
-          <h3>Install</h3>
-          <p class="pillar-sub">On-site, anywhere. Or supply-only.</p>
-          <p>Site survey, foundation prep, lifting, fixing, finishing — UK and international. Or we pack and label to specification for your own installer or main contractor.</p>
-        </div>
+  <section class="bg-s bt" id="services">
+    <div class="c">
+      <span class="label">How we work</span>
+      <h2>Six service pillars</h2>
+      <div class="pillar-grid">
+        <div class="pillar"><span class="pillar-n">01</span><h3>Concept</h3><p>Starting from a sketch, a brief, or just an occasion. Bring us nothing more than the moment you want to mark.</p></div>
+        <div class="pillar"><span class="pillar-n">02</span><h3>Design</h3><p>Working drawings, material samples, ready to sign off. Or we work straight to your designer&rsquo;s specification if the design is already locked.</p></div>
+        <div class="pillar"><span class="pillar-n">03</span><h3>Foundations &amp; Structure</h3><p>For pieces that need to stand for centuries. We co-ordinate foundation design, ground works and structural engineering.</p></div>
+        <div class="pillar"><span class="pillar-n">04</span><h3>Material Sourcing</h3><p>Direct from quarry. Welsh slate, Portland limestone, granite, marble and beyond. Provenance documented for every piece.</p></div>
+        <div class="pillar"><span class="pillar-n">05</span><h3>Craft &amp; Production</h3><p>Hand-cut, photo-blasted, gilded, polished, honed, riven &mdash; every finish, every technique, in our Cardiff workshop.</p></div>
+        <div class="pillar"><span class="pillar-n">06</span><h3>Install</h3><p>On-site, anywhere. Site survey, foundation prep, lifting, fixing, finishing &mdash; UK and international. Or supply-only.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- COMMISSIONS -->
-  <section class="bg-dark-s" id="work">
-    <div class="container">
-      <div class="section-header">
-        <span class="label">Selected commissions</span>
-        <div class="rule"></div>
-        <h2>The work<br><em>speaks for itself.</em></h2>
-      </div>
-      <div class="commissions-grid">
-        <div class="com-item">
-          <div class="com-dot"></div>
-          <div>
-            <p class="com-tag">Ceremonial · Welsh Slate</p>
-            <h4>King Charles III Unveiling</h4>
-            <p>Welsh slate plaque for the Sony Europe 50-year anniversary ceremony. Royal-standard production and full ceremony logistics.</p>
-          </div>
-        </div>
-        <div class="com-item">
-          <div class="com-dot"></div>
-          <div>
-            <p class="com-tag">Boulders · Engraved Slate</p>
-            <h4>Arsenal F.C. Training Centre</h4>
-            <p>Bespoke engraved Welsh slate boulder with club crest. Set at the club's London Colney training facility.</p>
-          </div>
-        </div>
-        <div class="com-item">
-          <div class="com-dot"></div>
-          <div>
-            <p class="com-tag">Architectural · Portland Limestone</p>
-            <h4>St Peter's College Oxford</h4>
-            <p>Bespoke college crest in Portland limestone. Conservation-sensitive specification, hand-carved and gilded in our Cardiff workshop.</p>
-          </div>
-        </div>
-        <div class="com-item">
-          <div class="com-dot"></div>
-          <div>
-            <p class="com-tag">Ceremonial · State Commission</p>
-            <h4>Welsh Government</h4>
-            <p>Commemorative and official signage for ongoing state-level and public realm commissions.</p>
-          </div>
-        </div>
-        <div class="com-item">
-          <div class="com-dot"></div>
-          <div>
-            <p class="com-tag">Signs · Corporate</p>
-            <h4>Pirelli · Kellogg's · News Corp</h4>
-            <p>Corporate signage and commemorative pieces for major international brands operating in the UK. Specification-to-install service.</p>
-          </div>
-        </div>
-        <div class="com-item">
-          <div class="com-dot"></div>
-          <div>
-            <p class="com-tag">Architectural · Heritage</p>
-            <h4>National Trust · RSPB</h4>
-            <p>Conservation-led wayfinding and interpretive signage. Material-matched to heritage fabric. Specification to NBS standard.</p>
-          </div>
-        </div>
+  <section class="bt cta-s" id="contact">
+    <div class="c">
+      <span class="label">Start a conversation</span>
+      <h2>Tell us about your project.</h2>
+      <p>We&rsquo;ll work out together where we fit.</p>
+      <div class="cta-row">
+        <a href="mailto:hello@stonesign.co.uk" class="btn">hello@stonesign.co.uk</a>
       </div>
     </div>
   </section>
 
-  <!-- CLIENTS -->
-  <section>
-    <div class="container">
-      <span class="label" style="margin-bottom:32px;">Clients &amp; partners</span>
-      <div class="clients-flex">
-        <span class="client-tag">Welsh Government</span>
-        <span class="client-tag">Scottish Government</span>
-        <span class="client-tag">BBC</span>
-        <span class="client-tag">RSPB</span>
-        <span class="client-tag">National Trust</span>
-        <span class="client-tag">Arsenal F.C.</span>
-        <span class="client-tag">Cardiff University</span>
-        <span class="client-tag">Pirelli</span>
-        <span class="client-tag">Kellogg's</span>
-        <span class="client-tag">News Corp</span>
-        <span class="client-tag">Sony Europe</span>
-        <span class="client-tag">Cardiff Council</span>
-        <span class="client-tag">IWM</span>
-        <span class="client-tag">Principality</span>
-        <span class="client-tag">Salvation Army</span>
-        <span class="client-tag">Go Compare</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section" id="contact">
-    <div class="container">
-      <span class="label">Get in touch</span>
-      <div class="rule" style="margin:20px auto;"></div>
-      <h2>Tell us about<br>your project.</h2>
-      <p class="sub">We'll work out together where we fit — concept, material, production, install, or any stage in between.</p>
-      <a href="mailto:hello@stonesign.com" class="btn btn-bronze">hello@stonesign.com</a>
-      <div class="contact-row">
-        <div class="contact-col">
-          <span class="label">Telephone</span>
-          <a href="tel:02920672823">029 2067 2823</a>
-        </div>
-        <div class="contact-col">
-          <span class="label">Studio</span>
-          <a href="#">285 Cowbridge Road West, Cardiff CF5 5TD</a>
-        </div>
-        <div class="contact-col">
-          <span class="label">Legacy brand</span>
-          <a href="https://stonesign.com" target="_blank" rel="noopener">stonesign.com →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CROSS-DIV BAR -->
-  <div class="xdiv-bar">
-    <div class="container">
-      <div class="xdiv-inner">
-        <span class="xdiv-label">Our divisions</span>
-        <a href="https://signs.thestonestudio.co" class="xdiv-link">Signs</a>
-        <a href="https://boulders.thestonestudio.co" class="xdiv-link">Boulders</a>
-        <a href="https://ceremonial.thestonestudio.co" class="xdiv-link">Ceremonial</a>
-        <a href="https://architectural.thestonestudio.co" class="xdiv-link">Architectural</a>
-        <a href="https://memorials.thestonestudio.co" class="xdiv-link">Memorials</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="wm">
-            <span class="wm-s" style="font-size:1.05rem;">Stone</span>
-            <span class="wm-t" style="font-size:1.05rem;">Studio</span>
-          </div>
-          <p>Six generations of Welsh stonemasonry. Bespoke stone commissions from concept to installation. Cardiff, since 1821.</p>
-          <p style="margin-top:12px;font-size:0.76rem;color:var(--muted);">An MS-Group Company · Reg. 821400</p>
-        </div>
-        <div class="footer-col">
-          <h5>Divisions</h5>
-          <ul>
-            <li><a href="https://signs.thestonestudio.co">Signs</a></li>
-            <li><a href="https://boulders.thestonestudio.co">Boulders</a></li>
-            <li><a href="https://ceremonial.thestonestudio.co">Ceremonial</a></li>
-            <li><a href="https://architectural.thestonestudio.co">Architectural</a></li>
-            <li><a href="https://memorials.thestonestudio.co">Memorials</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Studio</h5>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#pillars">How we work</a></li>
-            <li><a href="#work">Commissions</a></li>
-            <li><a href="https://stonesign.com">Stone Sign Co.</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Contact</h5>
-          <ul>
-            <li><a href="mailto:hello@stonesign.com">hello@stonesign.com</a></li>
-            <li><a href="tel:02920672823">029 2067 2823</a></li>
-            <li><a href="#">285 Cowbridge Road West</a></li>
-            <li><a href="#">Cardiff CF5 5TD</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 Stone Studio · An MS-Group Company</p>
-        <p>Part of the <a href="https://stonesign.com" style="color:var(--slate);">Stone Sign Co.</a> family</p>
+    <div class="c">
+      <div class="foot">
+        <span class="foot-note">Stone Studio &middot; Cardiff &middot; Est. 1821</span>
+        <div class="foot-links"><a href="#divisions">Divisions</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
       </div>
     </div>
   </footer>
 
   <script>
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
+    const nav=document.getElementById('nav');
+    window.addEventListener('scroll',()=>{nav.classList.toggle('sc',window.scrollY>50);},{passive:true});
   </script>
 </body>
 </html>

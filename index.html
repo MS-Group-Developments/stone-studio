@@ -9,42 +9,63 @@
   <link rel="canonical" href="https://thestonestudio.co/">
   <meta property="og:title" content="Stone Studio — From the first sketch to the final fixing">
   <meta property="og:description" content="Stone Studio is a Welsh workshop working with architects, developers and private clients across the UK. Five specialist divisions. Concept through installation. Since 1821.">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"></noscript>
   <style>
     :root{--bg:#F6F3EE;--bg-s:#EAE7E1;--fg:#191713;--mid:#7D7267;--rule:#D4CFCA;--stone:#8C7C6A}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--fg);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-    h1{font-size:clamp(2.6rem,5.5vw,5rem);font-weight:300;line-height:1.06;letter-spacing:-0.03em;color:var(--fg);font-family:'Inter',sans-serif}
-    h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.08;letter-spacing:-0.025em;color:var(--fg);font-family:'Inter',sans-serif}
+    h1{font-size:clamp(2.6rem,5.5vw,5rem);font-weight:300;line-height:1.06;letter-spacing:-0.03em;color:#fff}
+    h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.08;letter-spacing:-0.025em;color:var(--fg)}
     h3{font-size:0.95rem;font-weight:500;color:var(--fg);letter-spacing:0.01em}
     p{color:var(--mid);line-height:1.8;font-size:0.94rem}
     a{color:inherit;text-decoration:none}
     .label{font-size:0.78rem;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:14px}
     .c{max-width:1280px;margin:0 auto;padding:0 64px}
     @media(max-width:768px){.c{padding:0 24px}}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 64px;display:flex;align-items:center;justify-content:space-between;background:rgba(246,243,238,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 64px;display:flex;align-items:center;justify-content:space-between;transition:background 0.3s,border-color 0.3s;border-bottom:1px solid transparent}
     @media(max-width:768px){nav{padding:14px 24px}}
+    nav.sc{background:rgba(246,243,238,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--rule)}
     .nav-logo{display:block;line-height:0}
-    .nav-logo svg{width:530px;height:auto}
-    .nav-links{display:flex;gap:32px;list-style:none}
-    @media(max-width:960px){.nav-links{display:none}}
-    .nav-links a{font-size:0.78rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid);transition:color 0.2s}
-    .nav-links a:hover{color:var(--fg)}
-    .nav-cta{font-size:0.62rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--fg);border-bottom:1px solid var(--fg);padding-bottom:2px;transition:opacity 0.2s}
+    .nav-logo svg{width:clamp(180px,38vw,429px);height:auto;transition:color 0.2s}
+    nav:not(.sc) .nav-logo svg{color:rgba(255,255,255,0.9)}
+    nav.sc .nav-logo svg{color:var(--fg)}
+    .nav-links{display:flex;gap:32px;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
+    .nav-links a{font-size:0.78rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;transition:color 0.2s}
+    nav:not(.sc) .nav-links a{color:rgba(255,255,255,0.75)}
+    nav:not(.sc) .nav-links a:hover{color:#fff}
+    nav.sc .nav-links a{color:var(--mid)}
+    nav.sc .nav-links a:hover{color:var(--fg)}
+    .nav-cta{font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding-bottom:2px;transition:opacity 0.2s}
+    nav:not(.sc) .nav-cta{color:rgba(255,255,255,0.9);border-bottom:1px solid rgba(255,255,255,0.5)}
+    nav.sc .nav-cta{color:var(--fg);border-bottom:1px solid var(--fg)}
     .nav-cta:hover{opacity:0.55}
-    .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:63px}
-    @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}}
-    .hero-text{display:flex;flex-direction:column;justify-content:center;padding:88px 80px 88px 64px}
-    @media(max-width:900px){.hero-text{padding:56px 24px 48px}}
-    .hero-text h1{margin:14px 0 20px;font-family:'Inter',sans-serif}
-    .hero-text p{font-size:1rem;max-width:340px;color:var(--mid)}
-    .hero-photo{background-size:cover;background-position:center;min-height:520px}
-    @media(max-width:900px){.hero-photo{min-height:58vw;order:-1}}
-
-    .pillar-img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block;filter:brightness(0.88) contrast(1.05);margin-bottom:0}
+    .nav-right{display:flex;gap:16px;align-items:center}
+    .nav-burger{display:none;background:none;border:none;cursor:pointer;padding:4px 6px;line-height:1;transition:opacity 0.2s,color 0.2s}
+    nav:not(.sc) .nav-burger{color:rgba(255,255,255,0.88);text-shadow:0 1px 3px rgba(0,0,0,0.55)}
+    nav.sc .nav-burger{color:var(--fg)}
+    .nav-burger:hover{opacity:0.65}
+    @media(max-width:1400px){.nav-burger{display:block}}
+    @media(max-width:1400px){.nav-links{display:none}}
+    nav.nav-open{flex-wrap:wrap;padding-bottom:20px}
+    nav.nav-open .nav-links{display:flex!important;position:static!important;transform:none!important;left:auto!important;width:100%;order:10;flex-direction:column;gap:14px;border-top:1px solid rgba(255,255,255,0.3);margin-top:14px;padding-top:16px}
+    nav.nav-open.sc .nav-links{border-top-color:var(--rule)}
+    nav.nav-open .nav-links li a{font-size:0.8rem;letter-spacing:0.2em}
+    nav.nav-open:not(.sc) .nav-links li a{color:rgba(255,255,255,0.88)}
+    nav.nav-open:not(.sc) .nav-links li a:hover{color:#fff;opacity:1}
+    nav.nav-open.sc .nav-links li a{color:var(--mid)}
+    nav.nav-open.sc .nav-links li a:hover{color:var(--fg)}
+    .hero-video{position:relative;height:100vh;min-height:560px;overflow:hidden;background:#1a1714}
+    .hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.72}
+    .hero-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+    .hero-content{padding:0 64px;max-width:780px;text-align:center}
+    @media(max-width:768px){.hero-content{padding:0 24px}}
+    .hero-content .label{color:rgba(255,255,255,0.65)}
+    .hero-content p{color:rgba(255,255,255,0.88);font-size:1.05rem;font-weight:500;margin-top:18px;max-width:480px;margin-left:auto;margin-right:auto}
     .photo-strip{display:grid;gap:3px;background:var(--bg-s)}
-    .photo-strip img{width:100%;aspect-ratio:1;object-fit:cover;display:block;filter:brightness(0.97)}
+    .photo-strip img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;display:block;filter:brightness(0.97)}
     section{padding:104px 0}
     @media(max-width:768px){section{padding:72px 0}}
     .bt{border-top:1px solid var(--rule)}
@@ -57,21 +78,7 @@
     @media(max-width:600px){.stats{gap:28px}}
     .stat-n{font-size:2rem;font-weight:300;color:var(--fg);letter-spacing:-0.03em;line-height:1;display:block}
     .stat-l{font-size:0.58rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);display:block;margin-top:4px}
-    .div-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);margin-top:52px}
-    @media(max-width:1100px){.div-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:580px){.div-grid{grid-template-columns:1fr}}
-    .div-card{background:var(--bg);padding:40px 28px 36px;display:block;transition:background 0.25s}
-    .div-card:hover{background:var(--bg-s)}
-    .div-card .label{margin-bottom:10px}
-    .div-title{font-size:0.9rem;font-weight:500;color:var(--fg);margin-bottom:10px}
-    .div-desc{font-size:0.8rem;color:var(--mid);line-height:1.7;margin-bottom:22px}
-    .div-link{font-size:0.58rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)}
-    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:56px}
-    @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:580px){.svc-grid{grid-template-columns:1fr}}
-    .svc{background:var(--bg-s);padding:36px 28px}
-    .svc h3{margin-bottom:8px}
-    .svc p{font-size:0.82rem;line-height:1.72}
+    .pillar-img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block;filter:brightness(0.88) contrast(1.05);margin-bottom:0}
     .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:56px}
     @media(max-width:900px){.pillar-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:580px){.pillar-grid{grid-template-columns:1fr}}
@@ -80,21 +87,6 @@
     .pillar-n{font-size:0.58rem;font-weight:500;letter-spacing:0.22em;color:var(--stone);margin-bottom:16px;display:block}
     .pillar h3{font-size:0.95rem;font-weight:500;margin-bottom:8px}
     .pillar p{font-size:0.82rem;line-height:1.72}
-    .cta-s{text-align:center}
-    .cta-s h2{max-width:580px;margin:14px auto 14px;font-family:'Inter',sans-serif}
-    .cta-s p{max-width:420px;margin:0 auto 36px;font-size:0.95rem}
-    .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-block;font-size:0.6rem;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;padding:13px 36px;border:1px solid var(--fg);color:var(--fg);transition:all 0.2s}
-    .btn:hover{background:var(--fg);color:var(--bg)}
-    .btn-ghost{border-color:var(--rule);color:var(--mid)}
-    .btn-ghost:hover{border-color:var(--fg);color:var(--fg);background:transparent}
-    footer{padding:32px 0;border-top:1px solid var(--rule)}
-    .foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-    .foot-note{font-size:0.65rem;color:var(--stone);letter-spacing:0.06em}
-    .foot-links{display:flex;gap:24px}
-    .foot-links a{font-size:0.62rem;color:var(--stone);letter-spacing:0.14em;text-transform:uppercase;transition:color 0.2s}
-    .foot-links a:hover{color:var(--fg)}
-
     .branch-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);margin-top:52px}
     @media(max-width:1100px){.branch-grid{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:680px){.branch-grid{grid-template-columns:1fr 1fr}}
@@ -103,74 +95,87 @@
     .branch-svg svg{width:100%;height:auto;max-height:52px;color:var(--fg)}
     .branch-card{display:block;text-decoration:none;background:var(--bg);transition:background 0.25s;overflow:hidden}
     .branch-card:hover{background:var(--bg-s)}
-    .branch-logo-txt{font-size:0.68rem;font-weight:300;letter-spacing:0.3em;text-transform:uppercase;color:var(--fg);display:block;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--rule)}
-    .branch-desc{font-size:0.82rem;color:var(--mid);line-height:1.72;margin-bottom:20px}
+    .branch-desc{font-size:0.82rem;color:var(--mid);line-height:1.72}
     .branch-cta{font-size:0.6rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)}
     .lede{font-size:1rem;color:var(--mid);line-height:1.72;max-width:600px;margin-top:14px}
-    </style>
+    .cta-s{text-align:center}
+    .cta-s h2{max-width:580px;margin:14px auto 14px}
+    .cta-s p{max-width:420px;margin:0 auto 36px;font-size:0.95rem}
+    .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;font-size:0.6rem;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;padding:13px 36px;border:1px solid var(--fg);color:var(--fg);transition:all 0.2s}
+    .btn:hover{background:var(--fg);color:var(--bg)}
+    footer{padding:32px 0;border-top:1px solid var(--rule)}
+    .foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .foot-note{font-size:0.65rem;color:var(--stone);letter-spacing:0.06em}
+    .foot-links{display:flex;gap:24px}
+    .foot-links a{font-size:0.62rem;color:var(--stone);letter-spacing:0.14em;text-transform:uppercase;transition:color 0.2s}
+    .foot-links a:hover{color:var(--fg)}
+  </style>
 </head>
 <body>
+
   <nav id="nav">
-    <a href="/" class="nav-logo"><svg viewBox="-18 0 474 101">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #231f20;
-      }
-    </style>
-  </defs>
-  <g id="Layer_1-2" data-name="Layer 1">
+    <a href="/" class="nav-logo"><svg viewBox="-18 0 474 101" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <g>
     <g>
       <g>
-        <path class="cls-1" d="M305.56,36.44c-.81-.39-1.81-.76-2.99-1.1-1.18-.34-2.36-.51-3.54-.51-1.84,0-3.31.46-4.41,1.38-1.1.92-1.65,2.07-1.65,3.46,0,1.05.32,1.92.95,2.62.63.7,1.46,1.29,2.48,1.77,1.02.49,2.11.95,3.27,1.4.92.34,1.83.72,2.74,1.14s1.73.93,2.46,1.54,1.32,1.35,1.75,2.24c.43.89.65,2,.65,3.31,0,1.55-.37,2.92-1.1,4.11-.73,1.19-1.76,2.12-3.07,2.78s-2.83.98-4.57.98c-1.39,0-2.66-.17-3.8-.51-1.14-.34-2.14-.74-2.99-1.2-.85-.46-1.53-.85-2.03-1.16l.91-1.57c.58.42,1.28.84,2.11,1.26.83.42,1.73.77,2.7,1.06.97.29,1.94.43,2.91.43,1.13,0,2.22-.22,3.29-.67s1.94-1.12,2.64-2.03,1.04-2.05,1.04-3.44-.33-2.42-.98-3.25c-.66-.83-1.5-1.5-2.52-2.03-1.02-.52-2.11-1-3.27-1.42-.89-.34-1.79-.7-2.68-1.08-.89-.38-1.71-.84-2.44-1.38-.74-.54-1.32-1.19-1.75-1.95-.43-.76-.65-1.68-.65-2.76,0-1.34.34-2.5,1.02-3.5.68-1,1.61-1.78,2.78-2.34,1.17-.56,2.5-.86,4-.89,1.31,0,2.64.17,4,.51s2.53.77,3.52,1.3l-.75,1.5Z"/>
-        <path class="cls-1" d="M316.74,33.29h18.3v1.85h-8.23v26.1h-1.93v-26.1h-8.15v-1.85Z"/>
-        <path class="cls-1" d="M347.99,51.79c0,1.63.33,3.03,1,4.21.67,1.18,1.58,2.09,2.74,2.74,1.15.64,2.47.96,3.94.96s2.83-.32,4-.96c1.17-.64,2.09-1.56,2.76-2.74s1-2.58,1-4.21v-18.5h1.89v18.62c0,2.02-.43,3.75-1.28,5.2-.85,1.44-2.01,2.54-3.46,3.31-1.46.76-3.09,1.14-4.9,1.14s-3.44-.38-4.9-1.14c-1.46-.76-2.6-1.86-3.44-3.31s-1.26-3.17-1.26-5.2v-18.62h1.93v18.5Z"/>
-        <path class="cls-1" d="M378.58,61.24v-27.95h6.89c2.7,0,5.01.43,6.91,1.28,1.9.85,3.44,1.97,4.62,3.37,1.18,1.39,2.05,2.91,2.6,4.57.55,1.65.83,3.29.83,4.92,0,2.13-.37,4.04-1.1,5.73s-1.74,3.14-3.01,4.35c-1.27,1.21-2.72,2.13-4.35,2.77-1.63.64-3.35.96-5.16.96h-8.23ZM380.51,59.39h5.79c1.68,0,3.25-.28,4.72-.83,1.47-.55,2.76-1.35,3.88-2.4,1.12-1.05,1.99-2.32,2.62-3.8s.95-3.17.95-5.06c0-1.6-.27-3.13-.81-4.58-.54-1.46-1.34-2.75-2.42-3.88-1.08-1.13-2.4-2.02-3.98-2.68-1.58-.66-3.41-.98-5.51-.98h-5.24v24.21Z"/>
-        <path class="cls-1" d="M412.07,33.29h1.93v27.95h-1.93v-27.95Z"/>
-        <path class="cls-1" d="M425.65,47.3c0-1.97.37-3.81,1.1-5.53.73-1.72,1.76-3.24,3.07-4.57s2.83-2.36,4.55-3.11c1.72-.75,3.56-1.12,5.53-1.12s3.82.37,5.55,1.12c1.73.75,3.25,1.79,4.57,3.11,1.31,1.33,2.34,2.85,3.09,4.57.75,1.72,1.12,3.56,1.12,5.53s-.37,3.81-1.12,5.53c-.75,1.72-1.78,3.24-3.09,4.55s-2.83,2.34-4.57,3.07c-1.73.73-3.58,1.1-5.55,1.1s-3.81-.35-5.53-1.06c-1.72-.71-3.23-1.71-4.55-2.99-1.31-1.29-2.34-2.79-3.07-4.53-.73-1.73-1.1-3.62-1.1-5.67ZM427.62,47.34c0,1.71.32,3.31.95,4.8.63,1.5,1.51,2.81,2.64,3.94,1.13,1.13,2.43,2.01,3.92,2.66,1.48.64,3.06.96,4.74.96s3.35-.32,4.84-.96c1.5-.64,2.81-1.53,3.94-2.66,1.13-1.13,2.01-2.44,2.66-3.94.64-1.5.96-3.11.96-4.84s-.32-3.31-.96-4.82c-.64-1.51-1.53-2.83-2.66-3.98-1.13-1.14-2.44-2.04-3.94-2.7-1.5-.66-3.1-.98-4.8-.98s-3.35.33-4.84,1c-1.5.67-2.8,1.58-3.92,2.74-1.12,1.16-1.98,2.49-2.6,4-.62,1.51-.92,3.1-.92,4.78Z"/>
+        <path d="M305.56,36.44c-.81-.39-1.81-.76-2.99-1.1-1.18-.34-2.36-.51-3.54-.51-1.84,0-3.31.46-4.41,1.38-1.1.92-1.65,2.07-1.65,3.46,0,1.05.32,1.92.95,2.62.63.7,1.46,1.29,2.48,1.77,1.02.49,2.11.95,3.27,1.4.92.34,1.83.72,2.74,1.14s1.73.93,2.46,1.54,1.32,1.35,1.75,2.24c.43.89.65,2,.65,3.31,0,1.55-.37,2.92-1.1,4.11-.73,1.19-1.76,2.12-3.07,2.78s-2.83.98-4.57.98c-1.39,0-2.66-.17-3.8-.51-1.14-.34-2.14-.74-2.99-1.2-.85-.46-1.53-.85-2.03-1.16l.91-1.57c.58.42,1.28.84,2.11,1.26.83.42,1.73.77,2.7,1.06.97.29,1.94.43,2.91.43,1.13,0,2.22-.22,3.29-.67s1.94-1.12,2.64-2.03,1.04-2.05,1.04-3.44-.33-2.42-.98-3.25c-.66-.83-1.5-1.5-2.52-2.03-1.02-.52-2.11-1-3.27-1.42-.89-.34-1.79-.7-2.68-1.08-.89-.38-1.71-.84-2.44-1.38-.74-.54-1.32-1.19-1.75-1.95-.43-.76-.65-1.68-.65-2.76,0-1.34.34-2.5,1.02-3.5.68-1,1.61-1.78,2.78-2.34,1.17-.56,2.5-.86,4-.89,1.31,0,2.64.17,4,.51s2.53.77,3.52,1.3l-.75,1.5Z"/>
+        <path d="M316.74,33.29h18.3v1.85h-8.23v26.1h-1.93v-26.1h-8.15v-1.85Z"/>
+        <path d="M347.99,51.79c0,1.63.33,3.03,1,4.21.67,1.18,1.58,2.09,2.74,2.74,1.15.64,2.47.96,3.94.96s2.83-.32,4-.96c1.17-.64,2.09-1.56,2.76-2.74s1-2.58,1-4.21v-18.5h1.89v18.62c0,2.02-.43,3.75-1.28,5.2-.85,1.44-2.01,2.54-3.46,3.31-1.46.76-3.09,1.14-4.9,1.14s-3.44-.38-4.9-1.14c-1.46-.76-2.6-1.86-3.44-3.31s-1.26-3.17-1.26-5.2v-18.62h1.93v18.5Z"/>
+        <path d="M378.58,61.24v-27.95h6.89c2.7,0,5.01.43,6.91,1.28,1.9.85,3.44,1.97,4.62,3.37,1.18,1.39,2.05,2.91,2.6,4.57.55,1.65.83,3.29.83,4.92,0,2.13-.37,4.04-1.1,5.73s-1.74,3.14-3.01,4.35c-1.27,1.21-2.72,2.13-4.35,2.77-1.63.64-3.35.96-5.16.96h-8.23ZM380.51,59.39h5.79c1.68,0,3.25-.28,4.72-.83,1.47-.55,2.76-1.35,3.88-2.4,1.12-1.05,1.99-2.32,2.62-3.8s.95-3.17.95-5.06c0-1.6-.27-3.13-.81-4.58-.54-1.46-1.34-2.75-2.42-3.88-1.08-1.13-2.4-2.02-3.98-2.68-1.58-.66-3.41-.98-5.51-.98h-5.24v24.21Z"/>
+        <path d="M412.07,33.29h1.93v27.95h-1.93v-27.95Z"/>
+        <path d="M425.65,47.3c0-1.97.37-3.81,1.1-5.53.73-1.72,1.76-3.24,3.07-4.57s2.83-2.36,4.55-3.11c1.72-.75,3.56-1.12,5.53-1.12s3.82.37,5.55,1.12c1.73.75,3.25,1.79,4.57,3.11,1.31,1.33,2.34,2.85,3.09,4.57.75,1.72,1.12,3.56,1.12,5.53s-.37,3.81-1.12,5.53c-.75,1.72-1.78,3.24-3.09,4.55s-2.83,2.34-4.57,3.07c-1.73.73-3.58,1.1-5.55,1.1s-3.81-.35-5.53-1.06c-1.72-.71-3.23-1.71-4.55-2.99-1.31-1.29-2.34-2.79-3.07-4.53-.73-1.73-1.1-3.62-1.1-5.67ZM427.62,47.34c0,1.71.32,3.31.95,4.8.63,1.5,1.51,2.81,2.64,3.94,1.13,1.13,2.43,2.01,3.92,2.66,1.48.64,3.06.96,4.74.96s3.35-.32,4.84-.96c1.5-.64,2.81-1.53,3.94-2.66,1.13-1.13,2.01-2.44,2.66-3.94.64-1.5.96-3.11.96-4.84s-.32-3.31-.96-4.82c-.64-1.51-1.53-2.83-2.66-3.98-1.13-1.14-2.44-2.04-3.94-2.7-1.5-.66-3.1-.98-4.8-.98s-3.35.33-4.84,1c-1.5.67-2.8,1.58-3.92,2.74-1.12,1.16-1.98,2.49-2.6,4-.62,1.51-.92,3.1-.92,4.78Z"/>
       </g>
       <g>
-        <path class="cls-1" d="M142.15,40c-1.1-.6-2.22-1.1-3.37-1.5-1.14-.39-2.21-.59-3.21-.59-1.23,0-2.21.25-2.91.75-.71.5-1.06,1.25-1.06,2.24,0,.68.27,1.29.81,1.83.54.54,1.23,1.02,2.09,1.44.85.42,1.74.8,2.66,1.14.84.32,1.67.69,2.5,1.12.83.43,1.57.97,2.22,1.61.66.64,1.18,1.44,1.57,2.4.39.96.59,2.13.59,3.52,0,1.47-.38,2.83-1.14,4.09-.76,1.26-1.88,2.28-3.35,3.05-1.47.77-3.28,1.16-5.43,1.16-1.1,0-2.22-.11-3.37-.33s-2.26-.56-3.37-1.02c-1.1-.46-2.17-1.04-3.19-1.75l2.52-4.45c.68.5,1.42.94,2.22,1.32.8.38,1.61.68,2.42.89.81.21,1.56.31,2.24.31s1.37-.1,2.07-.29c.7-.2,1.27-.53,1.73-1,.46-.47.69-1.13.69-1.97,0-.58-.19-1.1-.57-1.58-.38-.47-.89-.91-1.54-1.3-.64-.39-1.35-.73-2.11-1.02-.89-.34-1.81-.73-2.75-1.18-.95-.45-1.83-.99-2.66-1.63-.83-.64-1.5-1.44-2.01-2.4s-.77-2.13-.77-3.52c0-1.68.37-3.14,1.12-4.37s1.8-2.21,3.17-2.93c1.36-.72,2.94-1.12,4.72-1.2,2.33,0,4.23.28,5.69.83,1.46.55,2.76,1.21,3.92,1.97l-2.17,4.37Z"/>
-        <path class="cls-1" d="M152.19,32.99h19.52v5.51h-7.05v23.46h-5.71v-23.46h-6.77v-5.51Z"/>
-        <path class="cls-1" d="M179.98,47.51c0-1.99.38-3.88,1.14-5.67.76-1.78,1.82-3.37,3.17-4.74s2.92-2.46,4.7-3.25c1.78-.79,3.7-1.18,5.75-1.18s3.92.39,5.71,1.18c1.78.79,3.37,1.87,4.74,3.25s2.45,2.96,3.23,4.74c.77,1.79,1.16,3.67,1.16,5.67s-.39,3.96-1.16,5.75c-.77,1.79-1.85,3.35-3.23,4.7s-2.96,2.41-4.74,3.17c-1.79.76-3.69,1.14-5.71,1.14s-3.96-.38-5.75-1.14c-1.79-.76-3.35-1.82-4.7-3.17s-2.41-2.92-3.17-4.7c-.76-1.78-1.14-3.7-1.14-5.75ZM185.88,47.51c0,1.29.23,2.49.69,3.6.46,1.12,1.1,2.1,1.93,2.95.83.85,1.78,1.52,2.87,1.99s2.28.71,3.56.71,2.38-.24,3.44-.71,1.99-1.13,2.77-1.99c.79-.85,1.4-1.84,1.85-2.95.45-1.11.67-2.32.67-3.6s-.23-2.53-.69-3.66c-.46-1.13-1.09-2.12-1.89-2.97-.8-.85-1.74-1.52-2.81-1.99s-2.24-.71-3.5-.71-2.43.24-3.5.71-2.02,1.14-2.83,1.99-1.44,1.84-1.89,2.97c-.45,1.13-.67,2.35-.67,3.66Z"/>
-        <path class="cls-1" d="M245.75,63.14l-21.96-19.84,1.69.94.12,17.71h-5.79v-30.11h.24l21.49,19.76-1.26-.55-.12-18.07h5.75v30.15h-.16Z"/>
-        <path class="cls-1" d="M257.91,32.99h19.76v5.51h-14.05v6.18h12.44v5.51h-12.44v6.26h14.6v5.51h-20.31v-28.97Z"/>
+        <path d="M142.15,40c-1.1-.6-2.22-1.1-3.37-1.5-1.14-.39-2.21-.59-3.21-.59-1.23,0-2.21.25-2.91.75-.71.5-1.06,1.25-1.06,2.24,0,.68.27,1.29.81,1.83.54.54,1.23,1.02,2.09,1.44.85.42,1.74.8,2.66,1.14.84.32,1.67.69,2.5,1.12.83.43,1.57.97,2.22,1.61.66.64,1.18,1.44,1.57,2.4.39.96.59,2.13.59,3.52,0,1.47-.38,2.83-1.14,4.09-.76,1.26-1.88,2.28-3.35,3.05-1.47.77-3.28,1.16-5.43,1.16-1.1,0-2.22-.11-3.37-.33s-2.26-.56-3.37-1.02c-1.1-.46-2.17-1.04-3.19-1.75l2.52-4.45c.68.5,1.42.94,2.22,1.32.8.38,1.61.68,2.42.89.81.21,1.56.31,2.24.31s1.37-.1,2.07-.29c.7-.2,1.27-.53,1.73-1,.46-.47.69-1.13.69-1.97,0-.58-.19-1.1-.57-1.58-.38-.47-.89-.91-1.54-1.3-.64-.39-1.35-.73-2.11-1.02-.89-.34-1.81-.73-2.75-1.18-.95-.45-1.83-.99-2.66-1.63-.83-.64-1.5-1.44-2.01-2.4s-.77-2.13-.77-3.52c0-1.68.37-3.14,1.12-4.37s1.8-2.21,3.17-2.93c1.36-.72,2.94-1.12,4.72-1.2,2.33,0,4.23.28,5.69.83,1.46.55,2.76,1.21,3.92,1.97l-2.17,4.37Z"/>
+        <path d="M152.19,32.99h19.52v5.51h-7.05v23.46h-5.71v-23.46h-6.77v-5.51Z"/>
+        <path d="M179.98,47.51c0-1.99.38-3.88,1.14-5.67.76-1.78,1.82-3.37,3.17-4.74s2.92-2.46,4.7-3.25c1.78-.79,3.7-1.18,5.75-1.18s3.92.39,5.71,1.18c1.78.79,3.37,1.87,4.74,3.25s2.45,2.96,3.23,4.74c.77,1.79,1.16,3.67,1.16,5.67s-.39,3.96-1.16,5.75c-.77,1.79-1.85,3.35-3.23,4.7s-2.96,2.41-4.74,3.17c-1.79.76-3.69,1.14-5.71,1.14s-3.96-.38-5.75-1.14c-1.79-.76-3.35-1.82-4.7-3.17s-2.41-2.92-3.17-4.7c-.76-1.78-1.14-3.7-1.14-5.75ZM185.88,47.51c0,1.29.23,2.49.69,3.6.46,1.12,1.1,2.1,1.93,2.95.83.85,1.78,1.52,2.87,1.99s2.28.71,3.56.71,2.38-.24,3.44-.71,1.99-1.13,2.77-1.99c.79-.85,1.4-1.84,1.85-2.95.45-1.11.67-2.32.67-3.6s-.23-2.53-.69-3.66c-.46-1.13-1.09-2.12-1.89-2.97-.8-.85-1.74-1.52-2.81-1.99s-2.24-.71-3.5-.71-2.43.24-3.5.71-2.02,1.14-2.83,1.99-1.44,1.84-1.89,2.97c-.45,1.13-.67,2.35-.67,3.66Z"/>
+        <path d="M245.75,63.14l-21.96-19.84,1.69.94.12,17.71h-5.79v-30.11h.24l21.49,19.76-1.26-.55-.12-18.07h5.75v30.15h-.16Z"/>
+        <path d="M257.91,32.99h19.76v5.51h-14.05v6.18h12.44v5.51h-12.44v6.26h14.6v5.51h-20.31v-28.97Z"/>
       </g>
     </g>
     <g>
       <g>
-        <rect class="cls-1" x="36.15" width="63.48" height="27.78"/>
-        <rect class="cls-1" x="36.16" y="36.12" width="63.47" height="27.78"/>
-        <rect class="cls-1" y="72.23" width="99.63" height="27.78"/>
+        <rect x="36.15" width="63.48" height="27.78"/>
+        <rect x="36.16" y="36.12" width="63.47" height="27.78"/>
+        <rect y="72.23" width="99.63" height="27.78"/>
       </g>
-      <rect class="cls-1" x="-18.09" y="18.09" width="63.97" height="27.78" transform="translate(-18.09 45.88) rotate(-90)"/>
+      <rect x="-18.09" y="18.09" width="63.97" height="27.78" transform="translate(-18.09 45.88) rotate(-90)"/>
     </g>
   </g>
 </svg></a>
-    <ul class="nav-links"><li><a href="#divisions">Divisions</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li></ul>
-    <div style="display:flex;gap:16px;align-items:center"><a href="mailto:hello@stonesign.co.uk" class="nav-cta">Enquire</a></div>
+    <ul class="nav-links">
+      <li><a href="#about">Studio</a></li>
+      <li><a href="#services">How we work</a></li>
+      <li><a href="#branches">Divisions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="mailto:hello@stonesign.co.uk" class="nav-cta">Enquire</a>
+      <button class="nav-burger" id="burger" aria-label="Open navigation menu" aria-expanded="false">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+          <rect y="0" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="7" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="14" width="22" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-text">
-      <span class="label">A Welsh workshop · Est. 1821</span>
-      <h1>From the first <span style="font-weight:700">sketch</span>
-to the final <span style="font-weight:700">fixing.</span></h1>
-      <p>Or any stage in between.</p>
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="none" poster="a1.jpg">
+      <source src="header.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <span class="label">A Welsh workshop &middot; Est. 1821</span>
+        <h1>From the first <span style="font-weight:700">sketch</span><br>to the final <span style="font-weight:700">fixing.</span></h1>
+        <p>Or any stage in between.</p>
+      </div>
     </div>
-    <div class="hero-photo" style="background-image:url('a1.jpg')"></div>
-  </section>
-
-  <div class="photo-strip" aria-hidden="true" style="grid-template-columns:repeat(6,1fr)">
-    <img src="1.jpg" alt="" loading="lazy">
-    <img src="2.jpg" alt="" loading="lazy">
-    <img src="7.jpg" alt="" loading="lazy">
-    <img src="8.jpg" alt="" loading="lazy">
-    <img src="10.jpg" alt="" loading="lazy">
-    <img src="11.jpg" alt="" loading="lazy">
   </div>
 
-  <section class="bt">
+  <section class="bt" id="about">
     <div class="c">
       <div class="two-col">
         <div>
@@ -179,7 +184,7 @@ to the final <span style="font-weight:700">fixing.</span></h1>
         </div>
         <div>
           <p>Some clients come with a vision and no design. Some come with a fully-locked drawing and just need the work made. Most come with something in between.</p>
-          <p>We pick up the project at whatever stage you need — and hand it back wherever you want. Five specialist divisions. One workshop. Cardiff.</p>
+          <p>We pick up the project at whatever stage you need &mdash; and hand it back wherever you want. Five specialist divisions. One workshop. Cardiff.</p>
           <p>We work with architects, developers, landscape designers, funeral directors, natural burial grounds and private clients across the UK and internationally.</p>
           <div class="stats">
             <div><span class="stat-n">1821</span><span class="stat-l">Founded</span></div>
@@ -190,6 +195,15 @@ to the final <span style="font-weight:700">fixing.</span></h1>
       </div>
     </div>
   </section>
+
+  <div class="photo-strip" aria-hidden="true" style="grid-template-columns:repeat(6,1fr)">
+    <img src="1.jpg" alt="" loading="lazy">
+    <img src="2.jpg" alt="" loading="lazy">
+    <img src="7.jpg" alt="" loading="lazy">
+    <img src="8.jpg" alt="" loading="lazy">
+    <img src="10.jpg" alt="" loading="lazy">
+    <img src="11.jpg" alt="" loading="lazy">
+  </div>
 
   <section class="bg-s bt" id="services">
     <div class="c">
@@ -206,14 +220,12 @@ to the final <span style="font-weight:700">fixing.</span></h1>
     </div>
   </section>
 
-  
-    <section class="bt" id="branches">
-      <div class="c">
-        <span class="label">Our divisions</span>
-        <h2>Five workshops. <span style="font-weight:700">One standard.</span></h2>
-        <p class="lede">Stone Studio is the parent workshop behind five specialist stone divisions. Each branch serves a distinct market — from landscape to ceremonial, signage to memorial — but every piece leaves the same Cardiff workshop, held to the same 200-year standard.</p>
-        
-        <div class="branch-grid">
+  <section class="bt" id="branches">
+    <div class="c">
+      <span class="label">Our divisions</span>
+      <h2>Five workshops. <span style="font-weight:700">One standard.</span></h2>
+      <p class="lede">Stone Studio is the parent workshop behind five specialist stone divisions. Each branch serves a distinct market &mdash; from landscape to ceremonial, signage to memorial &mdash; but every piece leaves the same Cardiff workshop, held to the same 200-year standard.</p>
+      <div class="branch-grid">
         <a href="https://stone-studio-signs.vercel.app" class="branch-card" target="_blank" rel="noopener">
           <img src="div-signs.jpg" alt="Stone Studio Signs — stone house name plaque" width="700" height="700" loading="lazy" decoding="async" class="branch-img">
           <span class="branch-svg"><svg viewBox="0 0 460 102" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Stone Studio Signs">
@@ -432,10 +444,11 @@ to the final <span style="font-weight:700">fixing.</span></h1>
           <p class="branch-desc" style="padding:18px 22px 0">Headstones, memorial plaques and natural burial markers crafted for private clients and the funeral trade in Cardiff. Each piece is made with care, made to endure.</p>
           <span class="branch-cta" style="display:block;padding:14px 22px 28px">Explore Memorials &rarr;</span>
         </a>
-        </div>
       </div>
-    </section>
-    <section class="bt cta-s" id="contact">
+    </div>
+  </section>
+
+  <section class="bt cta-s" id="contact">
     <div class="c">
       <span class="label">Start a conversation</span>
       <h2>Tell us about your <span style="font-weight:700">project.</span></h2>
@@ -450,7 +463,7 @@ to the final <span style="font-weight:700">fixing.</span></h1>
     <div class="c">
       <div class="foot">
         <span class="foot-note">Stone Studio &middot; Cardiff &middot; Est. 1821</span>
-        <div class="foot-links"><a href="#divisions">Divisions</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
+        <div class="foot-links"><a href="#about">Studio</a><a href="#services">Services</a><a href="#branches">Divisions</a><a href="#contact">Contact</a></div>
       </div>
     </div>
   </footer>
@@ -458,6 +471,20 @@ to the final <span style="font-weight:700">fixing.</span></h1>
   <script>
     const nav=document.getElementById('nav');
     window.addEventListener('scroll',()=>{nav.classList.toggle('sc',window.scrollY>50);},{passive:true});
+    const burger=document.getElementById('burger');
+    if(burger){
+      burger.addEventListener('click',()=>{
+        const open=nav.classList.toggle('nav-open');
+        burger.setAttribute('aria-expanded',open);
+      });
+      nav.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{
+        nav.classList.remove('nav-open');
+        burger.setAttribute('aria-expanded','false');
+      }));
+      document.addEventListener('click',(e)=>{
+        if(!nav.contains(e.target)){nav.classList.remove('nav-open');burger.setAttribute('aria-expanded','false');}
+      });
+    }
   </script>
 </body>
 </html>
